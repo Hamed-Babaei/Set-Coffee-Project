@@ -23,7 +23,7 @@ function Navbar() {
   }, []);
   return (
     <>
-      <nav className={fixTop ? styles.navbar_fix : styles.navbar}>
+      <nav className={fixTop ? styles.navbar_fixed : styles.navbar}>
         <main>
           <div>
             <Link href="/">
