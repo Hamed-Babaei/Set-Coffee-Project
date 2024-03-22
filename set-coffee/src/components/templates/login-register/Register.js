@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./register.module.css";
 import Sms from "./Sms";
 
-const Register = ({ showloginForm }) => {
+const Register = ({ showLoginForm }) => {
   const [isRegisterWithPass, setIsRegisterWithPass] = useState(false);
   const [isRegisterWithOtp, setIsRegisterWithOtp] = useState(false);
 
@@ -48,7 +48,7 @@ const Register = ({ showloginForm }) => {
             >
               ثبت نام با رمزعبور
             </button>
-            <p onClick={showloginForm} className={styles.back_to_login}>
+            <p onClick={showLoginForm} className={styles.back_to_login}>
               برگشت به ورود
             </p>
           </div>
