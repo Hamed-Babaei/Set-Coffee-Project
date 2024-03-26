@@ -32,10 +32,10 @@ const Register = ({ showLoginForm }) => {
       }
     }
 
-    const isValidPassword = validatePassword(password);
-    if (!isValidPassword) {
-      return showSwal("پسورد وارد شده قابل حدس هست", "error", "تلاش مجدد ");
-    }
+    // const isValidPassword = validatePassword(password);
+    // if (!isValidPassword) {
+    //   return showSwal("پسورد وارد شده قابل حدس هست", "error", "تلاش مجدد ");
+    // }
 
     const user = { name, phone, email, password };
 
