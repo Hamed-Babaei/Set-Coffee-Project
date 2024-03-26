@@ -27,23 +27,20 @@ const Login = ({ showRegisterForm }) => {
       return showSwal("پسورد را وارد کنید", "error", "تلاش مجدد");
     }
 
-    // const isValidPassword = validatePassword(password);
-    // if (!isValidPassword) {
-    //   return showSwal("پسورد به اندازه کافی قوی نیست", "error", "تلاش مجدد");
-    // }
+    const isValidPassword = validatePassword(password);
+    if (!isValidPassword) {
+      return showSwal("پسورد به اندازه کافی قوی نیست", "error", "تلاش مجدد");
+    }
 
     const user = { email: phoneOrEmail, password };
 
-    console.log("user => ,", user);
     const res = await fetch("/api/auth/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
     });
-    const data = await res.json();
 
     console.log("Res ->", res);
-    console.log("Data ->", data);
     if (res.status === 200) {
       showSwal("با موفقیت لاگین شدین", "success", "ورود به پنل کاربری");
     } else if (res.status === 422 || res.status === 401) {
