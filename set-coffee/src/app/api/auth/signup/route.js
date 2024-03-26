@@ -7,7 +7,6 @@ export async function POST(req) {
   connectToDB();
   const body = await req.json();
   const { name, phone, email, password } = body;
-  console.log("body => ", body);
 
   // Validation (You)
 
