@@ -1,8 +1,8 @@
 import {
   generateAccessToken,
   generateRefreshToken,
-  valiadteEmail,
-  valiadtePassword,
+  validateEmail,
+  validatePassword,
   verifyPassword,
 } from "@/utils/auth";
 import UserModel from "@/models/User";
@@ -13,11 +13,13 @@ export async function POST(req) {
     connectToDB();
     const body = await req.json();
     const { email, password } = body;
+    console.log("Body ->", body);
 
     // Validation
-    const isValidEmail = valiadteEmail(email);
-    const isValidPassword = valiadtePassword(password);
-
+    const isValidEmail = validateEmail(email);
+    console.log("isValidEmail => ", isValidEmail);
+    const isValidPassword = validatePassword(password);
+    console.log("isValidPassword => ", isValidPassword);
     if (!isValidEmail || !isValidPassword) {
       return Response.json(
         { message: "email or password is invalid" },
@@ -61,10 +63,10 @@ export async function POST(req) {
         },
       }
     );
-  } catch (err) {
-    console.log("Err ->", err);
+  } catch (error) {
+    console.log("error ->", error);
     return Response.json(
-      { message: err },
+      { message: error },
       {
         status: 500,
       }
