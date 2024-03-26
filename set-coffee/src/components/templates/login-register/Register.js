@@ -49,6 +49,10 @@ const Register = ({ showLoginForm }) => {
 
     if (res.status === 201) {
       showSwal("ثبت نام با موفقیت انجام شد", "success", "ورود به پنل کاربری");
+      setName("");
+      setPhone("");
+      setEmail("");
+      setPassword("");
     } else if (res.status === 422) {
       showSwal("کاربری با این اطلاعات از قبل وجود دارد", "error", "تلاش مجدد");
     }
