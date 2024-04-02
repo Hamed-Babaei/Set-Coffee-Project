@@ -6,14 +6,27 @@ import MoreProducts from "@/components/templates/product/MoreProducts";
 
 import Footer from "@/components/modules/footer/Footer";
 import Navbar from "@/components/modules/navbar/Navbar";
-import { authUser } from "@/utils/auth";
+import { authUser, verifyAccessToken } from "@/utils/auth";
 import ProductModel from "@/models/Product";
 import connectToDB from "@/configs/db";
+import { cookies } from "next/headers";
+import UserModel from "@/models/User";
 
 const product = async ({ params }) => {
-  const user = await authUser();
+  // const user = await authUser();
+  const token = cookies().get("token");
+  let user = null;
+
+  if (token) {
+    const tokenPayload = verifyAccessToken(token.value);
+    if (tokenPayload) {
+      user = await UserModel.findOne({ email: tokenPayload.email });
+      console.log("user => ", user);
+    }
+  }
   connectToDB();
   const productID = params.id;
+  console.log("productID => ", productID);
   const product = await ProductModel.findOne({ _id: productID }).populate(
     "comments"
   );
