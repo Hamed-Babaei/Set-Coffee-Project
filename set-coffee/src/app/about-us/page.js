@@ -1,4 +1,4 @@
-// import Breadcrumb from "@/components/modules/breadcrumb/Breadcrumb";
+import Breadcrumb from "@/components/modules/breadcrumb/Breadcrumb";
 import Footer from "@/components/modules/footer/Footer";
 import Navbar from "@/components/modules/navbar/Navbar";
 import styles from "@/styles/aboutUs.module.css";
@@ -11,7 +11,7 @@ const page = async () => {
     <>
       {/* <Navbar isLogin={user ? true : false} /> */}
       <Navbar />
-      {/* <Breadcrumb route={"درباره ما"} /> */}
+      <Breadcrumb route={"درباره ما"} />
       <div className={styles.container}>
         <section>
           <div>
