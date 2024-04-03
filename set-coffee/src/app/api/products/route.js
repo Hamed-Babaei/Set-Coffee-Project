@@ -32,6 +32,7 @@ export async function POST(req) {
       { status: 201 }
     );
   } catch (err) {
+    console.log("err in create new comments => ", err);
     return Response.json({ message: err }, { status: 500 });
   }
 }
