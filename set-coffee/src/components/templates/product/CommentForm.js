@@ -41,7 +41,7 @@ const CommentForm = ({ productID }) => {
     <div className={styles.form}>
       <p className={styles.title}>دیدگاه خود را بنویسید</p>
       <p>
-        نشانی ایمیل شما منتشر نخواهد شد. بخش‌های موردنیاز علامت‌گذاری شده‌اند{" "}
+        نشانی ایمیل شما منتشر نخواهد شد. بخش‌های موردنیاز علامت‌گذاری شده‌اند
         <span style={{ color: "red" }}>*</span>
       </p>
       <div className={styles.rate}>
@@ -97,7 +97,6 @@ const CommentForm = ({ productID }) => {
       <div className={styles.checkbox}>
         <input type="checkbox" name="" id="" />
         <p>
-          {" "}
           ذخیره نام، ایمیل و وبسایت من در مرورگر برای زمانی که دوباره دیدگاهی
           می‌نویسم.
         </p>

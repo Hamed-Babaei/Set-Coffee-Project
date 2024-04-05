@@ -4,7 +4,7 @@ import styles from "./tabs.module.css";
 import { useState } from "react";
 import Description from "./Description";
 import MoreInfos from "./MoreInfos";
-// import Comments from "./Comments";
+import Comments from "./Comments";
 const Tabs = ({ product }) => {
   const [tab, setTab] = useState("description");
   return (
@@ -33,23 +33,18 @@ const Tabs = ({ product }) => {
       <ul>
         <li title="Features">
           <label htmlFor="description" role="button">
-            {" "}
-            توضیحات{" "}
+            توضیحات
           </label>
         </li>
         <li title="Delivery Contents">
           <label htmlFor="moreInfos" role="button">
-            {" "}
-            اطلاعات بیشتر{" "}
+            اطلاعات بیشتر
           </label>
         </li>
         <li title="Shipping">
           <label htmlFor="comments" role="button">
-            {" "}
             نظرات (
-            {
-              product.comments.filter((comment) => comment.isAccept).length
-            }){" "}
+            {product.comments.filter((comment) => comment.isAccept).length})
           </label>
         </li>
       </ul>
@@ -62,10 +57,10 @@ const Tabs = ({ product }) => {
           <MoreInfos product={JSON.parse(JSON.stringify(product))} />
         </section>
         <section className={styles.tabs_content}>
-          {/* <Comments
+          <Comments
             productID={product._id}
             comments={JSON.parse(JSON.stringify(product.comments))}
-          /> */}
+          />
         </section>
       </div>
     </div>

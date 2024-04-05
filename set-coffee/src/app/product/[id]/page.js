@@ -13,6 +13,7 @@ import { cookies } from "next/headers";
 import UserModel from "@/models/User";
 
 const product = async ({ params }) => {
+  // Auth User fn
   // const user = await authUser();
   const token = cookies().get("token");
   let user = null;
@@ -24,6 +25,8 @@ const product = async ({ params }) => {
       console.log("user => ", user);
     }
   }
+  // Auth User fn
+
   connectToDB();
   const productID = params.id;
   console.log("productID => ", productID);
