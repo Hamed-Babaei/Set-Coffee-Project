@@ -16,6 +16,7 @@ export async function POST(req) {
       body,
       email,
       score,
+      isAccept: false,
       productID,
     });
 

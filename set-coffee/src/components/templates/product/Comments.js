@@ -16,13 +16,10 @@ const Comments = ({ productID, comments }) => {
             -10- عددی
           </p>
           <div>
-            {/* {comments.map(
+            {comments.map(
               (comment) =>
                 comment.isAccept && <Comment key={comment._id} {...comment} />
-            )} */}
-            {comments.map((comment) => (
-              <Comment {...comment} />
-            ))}
+            )}
           </div>
         </div>
         <div className={styles.form_bg}>
