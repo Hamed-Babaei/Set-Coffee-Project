@@ -9,6 +9,7 @@ import { cookies } from "next/headers";
 import UserModel from "@/models/User";
 
 export default async function Home() {
+  // Auth User codes ...
   const token = cookies().get("token");
   let user = null;
 
@@ -19,6 +20,7 @@ export default async function Home() {
       console.log("user => ", user);
     }
   }
+  // Auth User codes ...
 
   return (
     <>
