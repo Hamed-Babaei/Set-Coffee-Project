@@ -2,10 +2,26 @@ import Breadcrumb from "@/components/modules/breadcrumb/Breadcrumb";
 import Footer from "@/components/modules/footer/Footer";
 import Navbar from "@/components/modules/navbar/Navbar";
 import styles from "@/styles/rules.module.css";
-import { authUser } from "@/utils/auth";
+import { verifyAccessToken } from "@/utils/auth";
+import { cookies } from "next/headers";
+import UserModel from "@/models/User";
+// import { authUser } from "@/utils/auth";
 
 const page = async () => {
-  const user = await authUser();
+  // const user = await authUser();
+
+  // Auth User codes ...
+  const token = cookies().get("token");
+  let user = null;
+
+  if (token) {
+    const tokenPayload = verifyAccessToken(token.value);
+    if (tokenPayload) {
+      user = await UserModel.findOne({ email: tokenPayload.email });
+      // console.log("user => ", user);
+    }
+  }
+  // Auth User codes ...
 
   return (
     <>

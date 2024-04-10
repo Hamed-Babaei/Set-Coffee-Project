@@ -12,7 +12,7 @@ const Latest = () => {
           <span>Latest products</span>
         </div>
         <Link className={styles.link} href={"/category"}>
-          مشاهده همه <FaChevronLeft />{" "}
+          مشاهده همه <FaChevronLeft />
         </Link>
       </section>
       <main data-aos="fade-up" className={styles.products}>
