@@ -28,7 +28,7 @@ const page = async () => {
     const tokenPayload = verifyAccessToken(token.value);
     if (tokenPayload) {
       user = await UserModel.findOne({ email: tokenPayload.email });
-      console.log("user => ", user);
+      // console.log("user => ", user);
     }
   }
   if (user) {
