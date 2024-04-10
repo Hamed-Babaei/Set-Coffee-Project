@@ -17,7 +17,7 @@ export default async function Home() {
     const tokenPayload = verifyAccessToken(token.value);
     if (tokenPayload) {
       user = await UserModel.findOne({ email: tokenPayload.email });
-      console.log("user => ", user);
+      // console.log("user => ", user);
     }
   }
   // Auth User codes ...

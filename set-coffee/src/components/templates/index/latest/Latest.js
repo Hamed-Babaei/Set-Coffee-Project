@@ -16,14 +16,14 @@ const Latest = () => {
         </Link>
       </section>
       <main data-aos="fade-up" className={styles.products}>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        <Product score={5} />
+        <Product score={3} />
+        <Product score={1} />
+        <Product score={2} />
+        <Product score={2} />
+        <Product score={4} />
+        <Product score={2} />
+        <Product score={1} />
       </main>
     </div>
   );
