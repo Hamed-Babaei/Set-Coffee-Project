@@ -91,11 +91,8 @@ const Footer = () => {
       <hr />
       <div className="container">
         <p className={styles.copyRight}>
-          {" "}
           2023
-          <MdOutlineCopyright /> تمام حقوق متعلق است به <strong>
-            قهوه ست
-          </strong>{" "}
+          <MdOutlineCopyright /> تمام حقوق متعلق است به <strong>قهوه ست</strong>
           | طراحی و اجرا <strong>نیلامارکتینگ</strong>
         </p>
       </div>

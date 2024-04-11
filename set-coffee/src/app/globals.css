@@ -124,7 +124,7 @@ a {
 
 /* swal */
 .swal-footer {
-  text-align: center;
+  text-align: center !important;
 }
 
 .swal-modal {

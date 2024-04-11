@@ -39,6 +39,9 @@ const Form = () => {
       setMessage("");
       showSwal("پیغام شما با موفقیت ثبت شد", "success", "فهمیدم");
     }
+    if (res.status !== 201) {
+      showSwal("درخواست شما ثبت نشد", "error", "تلاش دوباره");
+    }
     console.log("Res ->", res);
   };
 

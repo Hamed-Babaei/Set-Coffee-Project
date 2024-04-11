@@ -24,9 +24,8 @@ const Information = () => {
       <div>
         <BiSolidContact />
         <p>
-          {" "}
           تهران. پاکدشت . شهرک صنعتی خوارزمی. فاز 2 . بلوار بهارستان. خیابان
-          ماگنولیا بلوک آ117{" "}
+          ماگنولیا بلوک آ117
         </p>
       </div>
       <div>
@@ -35,7 +34,7 @@ const Information = () => {
       </div>
       <div>
         <FaEnvelopeOpenText />
-        <p>offee[at]set-coffee.com</p>
+        <p>coffee[at]set-coffee.com</p>
       </div>
       <div>
         <FaEnvelopeOpenText />
