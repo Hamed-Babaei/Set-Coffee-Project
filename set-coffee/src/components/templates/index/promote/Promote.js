@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./promote.module.css";
+import styles from "./Promote.module.css";
 
 const Promote = () => {
   return (

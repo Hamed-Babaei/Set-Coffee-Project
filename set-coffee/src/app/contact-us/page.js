@@ -5,30 +5,14 @@ import Form from "@/components/templates/contact-us/Form";
 import Information from "@/components/templates/contact-us/Information";
 import Map from "@/components/templates/contact-us/Map";
 import styles from "@/styles/contact-us.module.css";
-import { verifyAccessToken } from "@/utils/auth";
-import { cookies } from "next/headers";
-// import { authUser } from "@/utils/auth";
+import { authUser } from "@/utils/serverHelpers";
 import Link from "next/link";
-import UserModel from "@/models/User";
 
 // [35.72021225108499, 51.42222691580869]
 // [35.70153474690238, 51.41497422314844]
 
 const page = async () => {
-  // const user = await authUser();
-
-  // Auth User codes ...
-  const token = cookies().get("token");
-  let user = null;
-
-  if (token) {
-    const tokenPayload = verifyAccessToken(token.value);
-    if (tokenPayload) {
-      user = await UserModel.findOne({ email: tokenPayload.email });
-      // console.log("user => ", user);
-    }
-  }
-  // Auth User codes ...
+  const user = await authUser();
 
   return (
     <>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./article.module.css";
+import styles from "./Article.module.css";
 const Article = ({ title, img, comments, date, href }) => {
   return (
     <Link href={href} className={styles.article}>

@@ -1,5 +1,5 @@
 "use client";
-import styles from "./articles.module.css";
+import styles from "./Articles.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";

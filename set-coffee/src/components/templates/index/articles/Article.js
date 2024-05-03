@@ -1,5 +1,5 @@
 import { MdOutlineSms } from "react-icons/md";
-import styles from "./article.module.css";
+import styles from "./Article.module.css";
 import { IoShareSocialOutline } from "react-icons/io5";
 import Link from "next/link";
 import {

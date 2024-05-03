@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./product.module.css";
+import styles from "./Product.module.css";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { CiSearch, CiHeart } from "react-icons/ci";
 

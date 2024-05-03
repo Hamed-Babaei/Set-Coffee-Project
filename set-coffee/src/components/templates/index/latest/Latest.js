@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./latest.module.css";
+import styles from "./Latest.module.css";
 import { FaChevronLeft } from "react-icons/fa6";
 import Product from "@/components/modules/product/Product";
 

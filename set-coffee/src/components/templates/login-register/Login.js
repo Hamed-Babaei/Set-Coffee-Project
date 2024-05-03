@@ -4,8 +4,11 @@ import Link from "next/link";
 import Sms from "./Sms";
 import { showSwal } from "@/utils/helpers";
 import { validateEmail, validatePassword } from "@/utils/auth";
+import swal from "sweetalert";
+import { redirect, useRouter } from "next/navigation";
 
 const Login = ({ showRegisterForm }) => {
+  const router = useRouter();
   const [isLoginWithOtp, setIsLoginWithOtp] = useState(false);
   const [password, setPassword] = useState("");
   const [phoneOrEmail, setPhoneOrEmail] = useState("");
@@ -42,7 +45,16 @@ const Login = ({ showRegisterForm }) => {
 
     console.log("Res ->", res);
     if (res.status === 200) {
-      showSwal("با موفقیت لاگین شدین", "success", "ورود به پنل کاربری");
+      swal({
+        title: "با موفقیت لاگین شدید",
+        icon: "success",
+        button: "ورود به پنل",
+      }).then((result) => {
+        if (result) {
+          router.push("/");
+        }
+        console.log(result);
+      });
     } else if (res.status === 422 || res.status === 401) {
       showSwal("کاربری با این اطلاعات یافت نشد", "error", "تلاش مجدد");
     } else if (res.status === 419) {
