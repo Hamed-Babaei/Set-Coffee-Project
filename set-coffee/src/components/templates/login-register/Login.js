@@ -51,9 +51,8 @@ const Login = ({ showRegisterForm }) => {
         button: "ورود به پنل",
       }).then((result) => {
         if (result) {
-          router.push("/");
+          router.push("p-user");
         }
-        console.log(result);
       });
     } else if (res.status === 422 || res.status === 401) {
       showSwal("کاربری با این اطلاعات یافت نشد", "error", "تلاش مجدد");
