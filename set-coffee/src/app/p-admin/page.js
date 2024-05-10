@@ -26,7 +26,7 @@ async function AdminHomePage() {
           <Box title="مجموع محصولات سایت" value={products.length} />
           <Box title="مجموع سفارشات" value="333" />
           <Box title="مجموع کاربر های سایت" value={users.length} />
-        </section>{" "}
+        </section>
         <div className={styles.dashboard_charts}>
           <section>
             <p>آمار فروش</p>
