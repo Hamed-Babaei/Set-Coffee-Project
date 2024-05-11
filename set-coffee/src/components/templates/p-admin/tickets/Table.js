@@ -37,6 +37,8 @@ export default function DataTable({ tickets, title }) {
             title: "پاسخ مورد نظر ثبت شد",
             icon: "success",
             buttons: "فهمیدم",
+          }).then(() => {
+            router.refresh();
           });
         }
       }
@@ -66,7 +68,9 @@ export default function DataTable({ tickets, title }) {
           <tbody>
             {tickets.map((ticket, index) => (
               <tr key={ticket._id}>
-                <td>{index + 1}</td>
+                <td className={ticket.hasAnswer ? "is-answer" : "no-answer"}>
+                  {index + 1}
+                </td>
                 <td>{ticket.user.name}</td>
                 <td>{ticket.title}</td>
                 <td>{ticket.department.title}</td>

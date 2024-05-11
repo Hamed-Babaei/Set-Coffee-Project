@@ -134,6 +134,7 @@ a {
 
 .swal-title {
   color: #000000 !important;
+  direction: rtl;
 }
 
 .swal-button--confirm {
@@ -200,4 +201,13 @@ a {
   bottom: 12px !important;
   left: unset !important;
   top: unset !important;
+}
+
+
+/* is Answer */
+.is-answer {
+  background-color: green;
+}
+.no-answer {
+  background-color: red;
 }
