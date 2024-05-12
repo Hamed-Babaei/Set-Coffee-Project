@@ -13,7 +13,7 @@ const page = async ({ params }) => {
     .lean();
   const answerTicket = await TicketModel.findOne({ mainTicket: ticket._id });
 
-  console.log("answerTicket => ", answerTicket);
+  console.log(ticket);
   return (
     <Layout>
       <main className={styles.container}>
@@ -24,7 +24,7 @@ const page = async ({ params }) => {
 
         <div>
           <Answer type="user" {...ticket} />
-          {answerTicket && <Answer type="admin" {...ticket} />}
+          {answerTicket && <Answer type="admin" />}
 
           {!answerTicket && (
             <div className={styles.empty}>
