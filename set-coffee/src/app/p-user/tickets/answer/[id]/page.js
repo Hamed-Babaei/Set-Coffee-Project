@@ -13,7 +13,6 @@ const page = async ({ params }) => {
     .lean();
   const answerTicket = await TicketModel.findOne({ mainTicket: ticket._id });
 
-  console.log(ticket);
   return (
     <Layout>
       <main className={styles.container}>

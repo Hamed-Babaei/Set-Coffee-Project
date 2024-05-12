@@ -9,7 +9,7 @@ export async function POST(req) {
     const reqBody = await req.json();
     const { _id, title, body, department, subDepartment, priority, ticketID } =
       reqBody;
-    console.log("id => ", _id);
+
     const user = await authUser();
 
     await TicketModel.findOneAndUpdate(
