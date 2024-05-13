@@ -1,4 +1,4 @@
-import Table from "@/components/templates/p-admin/comments/Table ";
+import Table from "@/components/templates/p-admin/comments/Table";
 import Layout from "@/components/layouts/UserPanelLayout";
 import React from "react";
 import connectToDB from "@/configs/db";
