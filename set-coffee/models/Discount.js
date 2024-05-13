@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require("./User");
 
 const schema = new mongoose.Schema(
   {
@@ -20,11 +21,11 @@ const schema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    // user: {
-    //   type: mongoose.Types.ObjectId,
-    //   ref: "User",
-    //   required: true,
-    // },
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   {
     timestamps: true,

@@ -7,7 +7,10 @@ import AddDiscount from "@/components/templates/p-admin/discounts/AddDiscount";
 
 const Discounts = async () => {
   connectToDB();
-  const discounts = await DiscountModel.find({}).sort({ _id: -1 }).lean();
+  const discounts = await DiscountModel.find({})
+    .sort({ _id: -1 })
+    .populate("user")
+    .lean();
 
   return (
     <Layout>

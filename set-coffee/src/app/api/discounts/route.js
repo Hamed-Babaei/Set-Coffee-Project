@@ -1,8 +1,10 @@
 import connectToDB from "@/configs/db";
 import DiscountModel from "@/models/Discount";
+import { authUser } from "@/utils/serverHelpers";
 
 export async function POST(req) {
   try {
+    const user = await authUser();
     connectToDB();
     const body = await req.json();
     const { code, percent, maxUse } = body;
@@ -13,6 +15,7 @@ export async function POST(req) {
       code,
       percent,
       maxUse,
+      user: user._id,
     });
 
     return Response.json(

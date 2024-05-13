@@ -11,6 +11,7 @@ function Table({ discounts }) {
           <th>درصد</th>
           <th>حداکثر استفاده</th>
           <th>دفعات استفاده شده</th>
+          <th>سازنده</th>
           <th>حذف</th>
         </tr>
       </thead>
@@ -28,6 +29,7 @@ function Table({ discounts }) {
             <td>{discount.percent}</td>
             <td>{discount.maxUse}</td>
             <td>{discount.uses}</td>
+            <td>{discount.user.name}</td>
             <td>
               <button type="button" className={styles.delete_btn}>
                 حذف
