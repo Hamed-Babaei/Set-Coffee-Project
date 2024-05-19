@@ -13,13 +13,11 @@ export async function POST(req) {
     connectToDB();
     const body = await req.json();
     const { email, password } = body;
-    console.log("Body ->", body);
 
     // Validation
     const isValidEmail = validateEmail(email);
-    console.log("isValidEmail => ", isValidEmail);
     const isValidPassword = validatePassword(password);
-    console.log("isValidPassword => ", isValidPassword);
+
     if (!isValidEmail || !isValidPassword) {
       return Response.json(
         { message: "email or password is invalid" },
@@ -54,19 +52,23 @@ export async function POST(req) {
       }
     );
 
+    const headers = new Headers();
+    headers.append("Set-Cookie", `token=${accessToken};path=/;httpOnly=true;`);
+    headers.append(
+      "Set-Cookie",
+      `refresh-token=${refreshToken};path=/;httpOnly=true;`
+    );
+
     return Response.json(
       { message: "User logged in successfully :))" },
       {
         status: 200,
-        headers: {
-          "Set-Cookie": `token=${accessToken};path=/;httpOnly=true;`,
-        },
+        headers,
       }
     );
-  } catch (error) {
-    console.log("error ->", error);
+  } catch (err) {
     return Response.json(
-      { message: error },
+      { message: err },
       {
         status: 500,
       }
