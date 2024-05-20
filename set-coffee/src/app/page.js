@@ -4,29 +4,18 @@ import Articles from "@/components/templates/index/articles/Articles";
 import Banner from "@/components/templates/index/banner/Banner";
 import Latest from "@/components/templates/index/latest/Latest";
 import Promote from "@/components/templates/index/promote/Promote";
-import { verifyAccessToken } from "@/utils/auth";
-import { cookies } from "next/headers";
-import UserModel from "@/models/User";
+
+import { authUser } from "@/utils/serverHelpers";
+import ProductModel from "@/models/Product";
 
 export default async function Home() {
-  // Auth User codes ...
-  const token = cookies().get("token");
-  let user = null;
-
-  if (token) {
-    const tokenPayload = verifyAccessToken(token.value);
-    if (tokenPayload) {
-      user = await UserModel.findOne({ email: tokenPayload.email });
-      // console.log("user => ", user);
-    }
-  }
-  // Auth User codes ...
-
+  const user = await authUser();
+  const latestProducts = await ProductModel.find({}).sort({ _id: -1 }).limit(8);
   return (
     <>
       <Navbar isLogin={user} />
       <Banner />
-      <Latest />
+      <Latest products={JSON.parse(JSON.stringify(latestProducts))} />
       <Promote />
       <Articles />
       <Footer />
