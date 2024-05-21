@@ -3,7 +3,7 @@ import styles from "./Product.module.css";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { CiSearch, CiHeart } from "react-icons/ci";
 
-const Card = ({ name, price, score, img }) => {
+const Card = ({ _id, name, price, score, img }) => {
   return (
     <div className={styles.card}>
       <div className={styles.details_container}>
@@ -28,7 +28,7 @@ const Card = ({ name, price, score, img }) => {
       </div>
 
       <div className={styles.details}>
-        <Link href={"/"}>{name}</Link>
+        <Link href={`/product/${_id}`}>{name}</Link>
         <div>
           {new Array(score).fill(0).map((item, index) => (
             <FaStar key={index} />
