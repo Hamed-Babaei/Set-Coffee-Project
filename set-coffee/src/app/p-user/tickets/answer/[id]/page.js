@@ -11,7 +11,11 @@ const page = async ({ params }) => {
   const ticket = await TicketModel.findOne({ _id: ticketID })
     .populate("user", "name")
     .lean();
-  const answerTicket = await TicketModel.findOne({ mainTicket: ticket._id });
+  const answerTicket = await TicketModel.findOne({
+    mainTicket: ticket._id,
+  }).populate("user", "name");
+
+  console.log("answerTicket => ", answerTicket);
 
   return (
     <Layout>
@@ -23,7 +27,7 @@ const page = async ({ params }) => {
 
         <div>
           <Answer type="user" {...ticket} />
-          {answerTicket && <Answer type="admin" />}
+          {answerTicket && <Answer type="admin" answerTicket={answerTicket} />}
 
           {!answerTicket && (
             <div className={styles.empty}>

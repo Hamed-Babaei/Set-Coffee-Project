@@ -13,7 +13,7 @@ export async function POST(req) {
     const user = await authUser();
 
     await TicketModel.findOneAndUpdate(
-      { _id },
+      { _id: ticketID },
       {
         $set: {
           hasAnswer: true,
